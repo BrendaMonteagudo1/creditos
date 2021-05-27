@@ -119,7 +119,7 @@ public class PrestamoManager {
         // Deberia traer solo aquella del nombre y con esto demostrarmos que trae todas
         // si pasamos
         // como nombre: "' or '1'='1"
-        Query query = session.createNativeQuery("SELECT * FROM cliente where nombre = '" + clienteId + "'", Prestamo.class);
+        Query query = session.createNativeQuery("SELECT * FROM prestamos where nombre = '" + clienteId + "'", Prestamo.class);
 
         List<Prestamo> prestamos = query.getResultList();
 

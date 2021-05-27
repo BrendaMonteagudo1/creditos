@@ -331,6 +331,8 @@ public class ABM {
 
         ABMPrestamo.create(prestamo);
 
+        System.out.println(" Prestamo ingresado correctamente ");
+
     }
     
     public static void printOpciones() {
