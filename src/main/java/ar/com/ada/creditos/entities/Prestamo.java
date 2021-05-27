@@ -1,12 +1,13 @@
 package ar.com.ada.creditos.entities;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Scanner;
 
 import javax.persistence.*;
 import javax.xml.crypto.Data;
 
 @Entity
-@Table(name = "prestamo")
+@Table(name = "prestamos")
 public class Prestamo {
 
     @Id
@@ -77,6 +78,7 @@ public class Prestamo {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
         this.cliente.getPrestamos().add(this);
+
     }
 
  
