@@ -25,6 +25,9 @@ public class Prestamo {
     @Column(name = "fecha_alta")
     private Date fechaAlta;
 
+    @Column(name = "estado_id")
+    private int estadoId; // por ahora int
+
     @ManyToOne
     @JoinColumn(name = "cliente_id", referencedColumnName = "cliente_id")
     private Cliente cliente;
@@ -81,6 +84,51 @@ public class Prestamo {
 
     }
 
- 
+    public EstadoPrestamoEnum getEstadoId() {
+        return EstadoPrestamoEnum.parce(this.estadoId);
+    } 
     
+    public void setEstadoId(EstadoPrestamoEnum estadoId) {
+        this.estadoId = estadoId.getValue();
+    } 
+      
+    public enum EstadoPrestamoEnum{
+        SOLICITADO(1),
+        RECHAZADO(2),
+        PENDIENTE_APROBACION(3),
+        APROBADO(4),
+        INCOBRABLE(5),
+        PROAPROBADO(6),
+        CANCELADO(7);
+
+        private final int value;
+
+        private EstadoPrestamoEnum(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public static EstadoPrestamoEnum parce(int id){
+            EstadoPrestamoEnum status = null;
+            for (EstadoPrestamoEnum item : EstadoPrestamoEnum.values()) {
+                if (item.getValue() == id){
+                    status = item;
+                    break;
+                }
+            }
+            return status;
+        }
+
+    }
 }
+
+
+        
+
+
+
+
+ 
