@@ -15,6 +15,7 @@
         
     <mapping class="ar.com.ada.creditos.entities.Cliente" />
     <mapping class="ar.com.ada.creditos.entities.Prestamo" />
+    <mapping class="ar.com.ada.creditos.entities.Cancelacion" />
      
   </session-factory>
 </hibernate-configuration>
