@@ -1,10 +1,8 @@
 package ar.com.ada.creditos.entities;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Scanner;
-
 import javax.persistence.*;
-import javax.xml.crypto.Data;
+
 
 @Entity
 @Table(name = "prestamos")
